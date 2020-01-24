@@ -52,7 +52,7 @@ namespace Permisos.WebApi.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{permisoId}")]
         public async Task<ActionResult<bool>> Delete(int permisoId)
         {
             try
