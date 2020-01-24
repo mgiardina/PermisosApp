@@ -1,0 +1,33 @@
+<div class="jumbtron" >
+    <h1 class="display-4 text-center" style="margin-top:20px; margin-bottom: 30px;">
+        Ver Permisos
+    </h1>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Tipo Permiso</th>
+                    <th scope="col">Fecha Registro</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let permiso of service.permisos">
+                    <th scope="row">{{permiso.id}}</th>
+                    <td>{{permiso.nombreEmpleado}}</td>
+                    <td>{{permiso.apellidosEmpleado}}</td>
+                    <td>{{permiso.tipoPermiso}}</td>
+                    <td>{{permiso.fechaPermiso | date:'mediumDate'}}</td>
+
+                    <td>
+                        <button class="btn btn-danger btn-lg btn-block" (click)="onDelete(permiso.id)" ><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
