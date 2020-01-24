@@ -1,0 +1,31 @@
+<div class="jumbtron">
+    <h1 class="display-4 text-center" style="margin-top:20px; margin-bottom: 30px;">
+        Solicitar Permisos
+    </h1>
+    <div class="container" style="margin-top: 30px;">
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+            <div class="row">
+                <div class="col-md-4">
+                    <select name="TipoPermisoId" class="form-control" [(ngModel)]="permisoService.formData.TipoPermisoId">
+                        <option value="0">Tipo de Permiso</option>
+                        <option *ngFor="let tipoPermiso of tipoPermisoService.tiposPermiso" [value]="tipoPermiso.id"  > 
+                            {{tipoPermiso.descripcion}}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <input name="NombreEmpleado" #NombreEmpleado="ngModel"
+                        [(ngModel)]="permisoService.formData.NombreEmpleado" class="form-control"
+                        placeholder="Nombre Empleado" required>
+                </div>
+                <div class="col-md-4">
+                    <input name="ApellidosEmpleado" #NombreEmpleado="ngModel"
+                        [(ngModel)]="permisoService.formData.ApellidosEmpleado" class="form-control"
+                        placeholder="Apellidos Empleado" required><br>
+                        <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i
+                            class="fa fa-database"></i> Guardar</button>  
+                </div>           
+            </div>
+        </form>
+    </div>
+</div>
